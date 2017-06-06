@@ -1,0 +1,15 @@
+# Custom CircleCI Config
+# https://circleci.com/docs/1.0/configuration/
+
+machine:
+  python:
+    version: "3.6.1"
+
+dependencies:
+  override:
+  - "pip install -U -r requirements.txt"
+  - "pip install -U -r requirements-test.txt"
+
+test:
+  override:
+  - "flake8 src/"
